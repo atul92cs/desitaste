@@ -22,6 +22,16 @@ app.use(express.static(path.join(__dirname,'public')));
   app.use(passport.initialize());
   app.use(passport.session());
 app.post('/add/product',user);
+app.post('/send/enquiry',user);
+app.post('/update/enquiry',user);
+app.post('/add/product',user);
+app.post('/update/product',user);
+app.post('/update/productpicture',user);
+app.post('/register',user);
+app.post('/login',user);
+app.delete('/delete/enquiry',user);
+app.delete('/delete/product/:id',user);
+
 app.listen(port,()=>{
     console.log('server started on' +' ' +port);
 });

@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 var bcrypt=require('bcryptjs');
-var userSchema=mongoose.model({
+var userSchema=mongoose.Schema({
      id:mongoose.Schema.Types.ObjectId,
      email:
           {
@@ -14,7 +14,7 @@ var userSchema=mongoose.model({
          }
 }); 
 
-var User=mongoose.model('User',userSchema);
+var User=module.exports=mongoose.model('User',userSchema);
 
 module.exports.hashPassword=(user,callback)=>{
     bcrypt.genSalt(10,(err,salt)=>{
