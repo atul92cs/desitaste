@@ -7,6 +7,7 @@ var session=require('express-session');
 var cookieParser=require('cookie-parser');
 var passport=require('passport');
 var user=require('./routes/user');
+var routes=require('./routes');
 var port=process.env.PORT||8080;
 var app=express();
 var db=mongoose.connect('mongodb+srv://pari_dhanupaul:pari2013@cluster0-sexi1.mongodb.net/test?retryWrites=true',{ useNewUrlParser: true });
@@ -31,7 +32,7 @@ app.post('/register',user);
 app.post('/login',user);
 app.delete('/delete/enquiry',user);
 app.delete('/delete/product/:id',user);
-
+app.get('/',routes.home);
 app.listen(port,()=>{
     console.log('server started on' +' ' +port);
 });
