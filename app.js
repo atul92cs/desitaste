@@ -27,7 +27,6 @@ app.post('/send/enquiry',user);
 app.post('/update/enquiry',user);
 app.post('/add/product',user);
 app.post('/update/product',user);
-app.post('/update/productpicture',user);
 app.post('/register',user);
 app.post('/login',user);
 app.delete('/delete/enquiry',user);

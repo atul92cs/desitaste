@@ -77,17 +77,17 @@ router.delete('/delete/enquiry',(req,res)=>{
 
 });
 
-router.post('/add/product',upload.single('picture'),(req,res)=>{
+router.post('/add/product',(req,res)=>{
      var name=req.body.name;
      var price=req.body.price;
      var category=req.body.category;
-     var picture=req.file.originalname;
+    
     
      const product = new Product({
          name:name,
          price:price,
          category:category,
-         picture:picture
+         
      });
     product.save().then(result=>{
         res.status(200).send('success');
@@ -114,24 +114,7 @@ router.post('/update/product',(req,res)=>{
     });
     
 });
-router.post('/update/productpicture',upload.single('picture'),(req,res)=>{
-    let record={};
-    record.name=req.body.name;
-    record.price=req.body.price;
-    record.category=req.body.category;
-    record.picture=req.file.originalname;
-    let query={_id:req.body._id};
-    Product.updateOne(query,record,(err)=>{
-        if(err)
-            {
-                res.status(500).send(err);
-            }
-        else
-            {
-                res.status(200).send('success');
-            }
-    });
-});
+
 router.delete('/delete/product/:id',(req,res)=>{
     var id=req.params.id;
     let query={_id:req.params.id};

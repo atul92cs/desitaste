@@ -16,12 +16,7 @@ const productSchema=mongoose.Schema({
        {
         type:String,
            required:true
-       },
-    picture:
-      {
-          type:String,
-          required:true
-      }
+       }
 });
 
 module.exports=mongoose.model('Product',productSchema);
