@@ -33,6 +33,10 @@ app.post('/login',user);
 app.delete('/delete/enquiry',user);
 app.delete('/delete/product/:id',user);
 app.get('/',routes.home);
+app.get('/about',routes.about);
+app.get('/menu',routes.menu);
+app.get('/contact',routes.contact);
+app.get('/login',routes.login);
 app.listen(port,()=>{
     console.log('server started on' +' ' +port);
 });
