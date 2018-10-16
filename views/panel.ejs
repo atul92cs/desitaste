@@ -19,15 +19,15 @@
         <div class="container">
             <form action="/add/product" method="post">
                 <div class="form-group">
-                    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                    <input type="name" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" required>
 
                 </div>
                 <div class="form-group">
-                    <input type="price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price">
+                    <input type="price" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter price" required>
 
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category">
+                    <input type="text" class="form-control" name="category" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category" required>
 
                 </div>
                 <div class="form-group text-center">
@@ -44,6 +44,7 @@
                  <table class="table">
                      <thead>
                          <tr>
+                             <th scope="col">Id</th>
                              <th scope="col">Name</th>
                              <th scope="col">Price</th>
                              <th scope="col">Category</th>
@@ -52,6 +53,7 @@
                      <tbody>
                         <%for(i=0;i<Products.length;i++){%>
                         <tr>
+                          <td><%=Products[i]._id%></td>
                         <td><%=Products[i].name%></td>
                         <td><%=Products[i].price%></td>
                         <td><%=Products[i].category%></td>
@@ -65,6 +67,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

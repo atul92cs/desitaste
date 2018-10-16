@@ -49,6 +49,7 @@ router.post('/update/enquiry',(req,res)=>{
         else
             {
                 res.status(200).send('Success');
+                
             }
     });
 });
@@ -90,7 +91,8 @@ router.post('/add/product',(req,res)=>{
          
      });
     product.save().then(result=>{
-        res.status(200).send('success');
+        
+        res.status(200).redirect('back');
     }).catch(err=>{
         res.status(500).send(err);
     });
