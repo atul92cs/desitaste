@@ -1,3 +1,4 @@
+const Product = require('../models/product');
 exports.home=(req,res)=>{
     res.render('home');
 };
@@ -5,7 +6,20 @@ exports.about=(req,res)=>{
   res.render('about');  
 };
 exports.menu=(req,res)=>{
-  res.render('menu');  
+    Product.find({},(err,docs)=>{
+        if(err)
+            {
+                throw err;
+                console.log(err);
+            }
+        else
+            {
+                var cursor=docs;
+                res.render('menu',{Products:cursor}); 
+            }
+    });
+  
+    
 };
 exports.contact=(req,res)=>{
   res.render('contact');  
@@ -15,4 +29,19 @@ exports.login=(req,res)=>{
 };
 exports.register=(req,res)=>{
     res.render('register');
+};
+exports.panel=(req,res)=>{
+    Product.find({},(err,docs)=>{
+        if(err)
+          {
+              throw err;
+              console.log(err);
+          }
+         else
+             {
+                 var cursor=docs;
+                 res.render('panel',{Products:cursor})
+             }
+    });
+    
 };

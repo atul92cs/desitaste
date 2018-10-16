@@ -12,7 +12,7 @@ var port=process.env.PORT||8080;
 var app=express();
 var db=mongoose.connect('mongodb+srv://pari_dhanupaul:pari2013@cluster0-sexi1.mongodb.net/test?retryWrites=true',{ useNewUrlParser: true });
 app.set('views',__dirname+'/views');
-app.set('view engine','pug');
+app.set('view engine','ejs');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -37,6 +37,7 @@ app.get('/menu',routes.menu);
 app.get('/contact',routes.contact);
 app.get('/login',routes.login);
 app.get('/register',routes.register);
+app.get('/panel',routes.panel);
 app.listen(port,()=>{
     console.log('server started on' +' ' +port);
 });
