@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Desi taste</title>
+</head>
+<body>
+ <section id="navigation">
+       <nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)) ">
+  <a class="navbar-brand" href="#">Desi taste </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/panel">Product </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+	  
+    </ul> 
+  </div>
+ 
+</nav>  
+   </section>
+   <section id="main-body">
+       <div class="container">
+           <table class="table">
+               <thead>
+                  <tr>
+                   <th scope="col">Id</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">Phone</th>
+                   <th scope="col">Email</th>
+                   <th scope="col">Query</th>
+                   <th scope="col">Status</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <%for(i=0;i<Enquiries.length;i++){%>
+                   <tr>
+                       <td><%=Enquiries[i]._id%></td>
+                       <td><%=Enquiries[i].name%></td>
+                       <td><%=Enquiries[i].phone%></td>
+                       <td><%=Enquiries[i].email%></td>
+                       <td><%=Enquiries[i].query%></td>
+                       <td><%=Enquiries[i].status%></td>
+                       <td><button type="button" class="btn btn-danger deletebutton" id="deletebutton">Delete</button></td>
+                       <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updatemodal">Update</button></td>
+                       
+                   </tr>
+                   <%}%>
+               </tbody>
+           </table>
+       </div>
+   </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>S
+     <script src="/js/uifunction.js">
+    </script> 
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+     <script src="/js/productfunction.js"></script>
+</body>
+</html>

@@ -38,6 +38,8 @@ app.get('/contact',routes.contact);
 app.get('/login',routes.login);
 app.get('/register',routes.register);
 app.get('/panel',routes.panel);
+app.get('/logout',user);
+app.get('/enquiries',routes.enquiries);
 app.listen(port,()=>{
     console.log('server started on' +' ' +port);
 });

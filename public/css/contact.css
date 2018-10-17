@@ -49,4 +49,8 @@ body {
       width:100%;
 	/* background-color:rgba(0,0,0,0.5);*/
 }
-
+#enquiryform h1 
+{
+    text-align:center;
+    padding-top:5vh;
+}

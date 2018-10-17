@@ -1,8 +1,13 @@
 $(document).ready(function(){
-    $('.addbutton').on('click',function(){
+     
+    $('.deletebutton').on('click',function(e){
+        $target=$(e.target);
+        var row=$target.closest('tr');
+        var id=row.find('td:eq(0)').text();
        $.ajax({
-           type:'POST',
-           url:'/add/product',
+          
+           type:'DELETE',
+           url:'/delete/product/'+id,
            success:function(response){
                window.location.href='/panel';
            },
@@ -11,6 +16,7 @@ $(document).ready(function(){
                window.location.href='/panel';
            }
            
-       }); 
+       });
     });
+    
 });

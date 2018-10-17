@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const Enquiry=require('../models/enquiry');
 exports.home=(req,res)=>{
     res.render('home');
 };
@@ -44,4 +45,18 @@ exports.panel=(req,res)=>{
              }
     });
     
+};
+exports.enquiries=(req,res)=>{
+    Enquiry.find({},(err,docs)=>{
+        if(err)
+            {
+                throw err;
+                console.log(err);
+            }
+        else
+            {
+                var cursor=docs;
+                res.render('panel-enquiries',{Enquiries:cursor})
+            }
+    });
 };

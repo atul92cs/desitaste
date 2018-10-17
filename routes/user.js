@@ -102,7 +102,6 @@ router.post('/update/product',(req,res)=>{
     record.name=req.body.name;
     record.price=req.body.price;
     record.category=req.body.category;
-    record.picture=req.body.picture;
     let query={_id:req.body._id};
     Product.updateOne(query,record,(err)=>{
         if(err)
@@ -182,7 +181,6 @@ passport.use(new localStrategy((email, password, done) => {
 }));
 passport.serializeUser((user, done) => {
     done(null, user._id);
-    console.log(user);
 });
 passport.deserializeUser((id, done) => {
     User.getUserbyId(id, (err, user) => {
