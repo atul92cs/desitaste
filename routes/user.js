@@ -28,10 +28,10 @@ router.post('/send/enquiry',(req,res)=>{
         query:query,
         status:'Query sent'
     });
-    enquiry.save.then(result=>{
-        res.send(err);
-    }).catch(err=>{
+    enquiry.save().then(result=>{
         res.send('enquiry sent');
+    }).catch(err=>{
+        res.send(err);
     });
 });
 router.post('/update/enquiry',(req,res)=>{
@@ -53,10 +53,10 @@ router.post('/update/enquiry',(req,res)=>{
             }
     });
 });
-router.delete('/delete/enquiry',(req,res)=>{
-    var id =req.body._id;
-    let query={_id:_id};
-    Enquiry.findById(id,(err,Enquiries)=>{
+router.delete('/delete/enquiry/:id',(req,res)=>{
+    var id =req.params.id;
+    let query={_id:req.params.id};
+    Enquiry.findById(req.params.id,(err,Enquiries)=>{
         if(err)
             {
                 res.status(500).send(err);

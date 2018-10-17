@@ -29,7 +29,7 @@ app.post('/add/product',user);
 app.post('/update/product',user);
 app.post('/register',user);
 app.post('/login',user);
-app.delete('/delete/enquiry',user);
+app.delete('/delete/enquiry/:id',user);
 app.delete('/delete/product/:id',user);
 app.get('/',routes.home);
 app.get('/about',routes.about);

@@ -55,7 +55,7 @@
                        <td><%=Enquiries[i].query%></td>
                        <td><%=Enquiries[i].status%></td>
                        <td><button type="button" class="btn btn-danger deletebutton" id="deletebutton">Delete</button></td>
-                       <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updatemodal">Update</button></td>
+                       <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateeqmodal">Update</button></td>
                        
                    </tr>
                    <%}%>
@@ -63,12 +63,42 @@
            </table>
        </div>
    </section>
+    <div class="modal updatingmodal" id="updateeqmodal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+	 <form action="/update/enquiry" method="POST">
+	   <div class="form-group">
+	   <input type="text" class="form-control j-name" aria-describedby="type Help" placeholder="Name" name="name" required>
+	   </div>
+	   <div class="form-group">
+	   <input type="text" class="form-control j-email" aria-describedby="experience Help" placeholder="Email" name="email" required>
+	   </div>
+	   <div class="form-group">
+	   <input type="phone" class="form-control j-phone" aria-describedby="experience Help" placeholder="Phone" name="phone" required>
+	   </div>
+	   <div class="form-group">
+	   <input type="text" class="form-control j-query" aria-describedby="experience Help" placeholder="query" name="query" required>
+	   </div>
+	   <div class="form-group">
+	   <input type="text" class="form-control j-status" aria-describedby="experience Help" placeholder="Status" name="status" required>
+	   </div>
+	   <div class="form-group">
+	   <input type="text" class="form-control j-id" aria-describedby="id Help" placeholder="Id" name="_id" readonly>
+	   </div>
+	   <div class="form-group text-center">
+	     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+		 <button type="sumbit" class="btn btn-primary">Update</button> 
+	   </div>
+	 </form>
+	</div>
+   </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>S
      <script src="/js/uifunction.js">
     </script> 
      <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
-     <script src="/js/productfunction.js"></script>
+     <script src="/js/enquiryfunction.js"></script>
 </body>
 </html>
