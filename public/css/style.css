@@ -140,3 +140,17 @@ nav>ul>li>ul>li>a {
     padding-top: 2vh;
     padding-bottom: 2vh;
 }
+#footer
+{
+    margin-top: 15vh;
+    text-align: center;
+    background: black;
+    color: white;
+    fixed-bottom:true;
+}
+#footer p
+{
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    
+}
