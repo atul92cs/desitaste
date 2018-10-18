@@ -34,6 +34,7 @@
    </section>
    <section id="main-body">
        <div class="container">
+          <h5> <%= typeof msg != 'undefined' ? msg : 'Select an action to complete' %></h5>
            <table class="table">
                <thead>
                   <tr>
@@ -62,6 +63,7 @@
                </tbody>
            </table>
        </div>
+       
    </section>
     <div class="modal updatingmodal" id="updateeqmodal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">

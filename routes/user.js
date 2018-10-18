@@ -5,17 +5,6 @@ var localStrategy=require('passport-local').Strategy;
 var Enquiry=require('../models/enquiry');
 var Product=require('../models/product');
 var User=require('../models/user');
-var multer=require('multer');
-var path=require('path');
-const storage=multer.diskStorage({
-    destination:'./public/uploads',
-    filename:function(req,file,cb){
-        cb(null,file.originalname);
-    }
-});
-const upload=multer({
-    storage:storage
-});
 router.post('/send/enquiry',(req,res)=>{
     var name=req.body.name;
     var phone=req.body.phone;
@@ -29,9 +18,9 @@ router.post('/send/enquiry',(req,res)=>{
         status:'Query sent'
     });
     enquiry.save().then(result=>{
-        res.send('enquiry sent');
+        res.render('contact',{msg:'Query sent we will reply you in a while'});
     }).catch(err=>{
-        res.send(err);
+        res.render('contact',{msg:'oops error occured please try again'});
     });
 });
 router.post('/update/enquiry',(req,res)=>{
@@ -44,11 +33,11 @@ router.post('/update/enquiry',(req,res)=>{
     Enquiry.updateOne(query,record,(err)=>{
         if(err)
             {
-                res.status(500).send(err);
+                res.render('panel-enquiries',{msg:'Oops! error occured please try again'})
             }
         else
             {
-                res.status(200).send('Success');
+                res.render('panel-enquiries',{msg:'Query updated'});
                 
             }
     });
@@ -92,9 +81,9 @@ router.post('/add/product',(req,res)=>{
      });
     product.save().then(result=>{
         
-        res.status(200).redirect('back');
+        res.render('panel',{msg:'Product created'});
     }).catch(err=>{
-        res.status(500).send(err);
+        res.render('panel',{msg:'Opps ! error occured'});
     });
 });
 router.post('/update/product',(req,res)=>{
@@ -106,11 +95,11 @@ router.post('/update/product',(req,res)=>{
     Product.updateOne(query,record,(err)=>{
         if(err)
             {
-                res.status(500).send(err);
+                res.render('panel',{msg:'Product updated'});
             }
         else
             {
-                res.status(200).send('success');
+                res.render('panel',{msg:'Oops! Error occured'});
             }
     });
     
@@ -157,7 +146,7 @@ router.post('/register',(req,res)=>{
                 });
                 User.hashPassword(user,(err,user)=>{
                     if(err) throw err;
-                    res.status(200).send('User registered');
+                    res.render('register',{msg:'User registered'});
                 });
             }
     });

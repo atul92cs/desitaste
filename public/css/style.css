@@ -128,3 +128,15 @@ nav>ul>li>ul>li>a {
 {
     margin-top:15vh;
 }
+#main h4 
+{
+    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+#main-body h5
+{
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}

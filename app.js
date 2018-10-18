@@ -22,6 +22,14 @@ app.use(express.static(path.join(__dirname,'public')));
   resave: true  }));
   app.use(passport.initialize());
   app.use(passport.session());
+function ensureAuthenticated(req,res,next){
+	if(req.isAuthenticated())
+	{
+		return next();
+	}else{
+		res.redirect('/login');
+	}
+}
 app.post('/add/product',user);
 app.post('/send/enquiry',user);
 app.post('/update/enquiry',user);
@@ -37,9 +45,9 @@ app.get('/menu',routes.menu);
 app.get('/contact',routes.contact);
 app.get('/login',routes.login);
 app.get('/register',routes.register);
-app.get('/panel',routes.panel);
+app.get('/panel',ensureAuthenticated,routes.panel);
 app.get('/logout',user);
-app.get('/enquiries',routes.enquiries);
+app.get('/enquiries',ensureAuthenticated,routes.enquiries);
 app.listen(port,()=>{
     console.log('server started on' +' ' +port);
 });

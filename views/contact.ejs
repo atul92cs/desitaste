@@ -22,7 +22,6 @@
             </ul>
             </div>
     </nav>
-    <div class="cover-caption"></div>
 </section>
 <section id="enquiryform">
  <div class="container">
@@ -30,6 +29,7 @@
   <div class="col-md-6 col-xs-12 col-sm-12">
   <h1>Contact Us</h1>
  <form action="/send/enquiry" method="post">
+    <h5> <%= typeof msg != 'undefined' ? msg : 'Please fill in the details to contact the hotel' %></h5>
      <div class="form-group">
          <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" name="name" required>
      </div>
@@ -53,7 +53,7 @@
  </form>
  </div>
  <div class="col-md-6 col-sm-12 col-xs-12">
-     <h1>Contact for</h1>
+     <h2>Contact for</h2>
      <ul class="list-group">
          <li class="list-group-item">Party Order</li>
          <li class="list-group-item">Bulk Order</li>

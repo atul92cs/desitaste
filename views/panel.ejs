@@ -38,6 +38,7 @@
     <section id="main-body">
         <div class="container">
             <form action="/add/product" method="post">
+               <h5> <%= typeof msg != 'undefined' ? msg : 'Please select an action for products' %></h5>
                 <div class="form-group">
                     <input type="name" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" required>
 

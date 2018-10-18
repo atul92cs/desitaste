@@ -12,17 +12,8 @@ body {
 }
 #navigation
 {
-  background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/chicken-background.jpg') center center no-repeat;
-  height:85vh;
-  background-size:cover;
-  	color:white;
-  display:flex;
  text-align:center !important;
   align-items:center !important;
-  background-attachment:fixed;
-   
-   
-
 }
 .navbar-nav
 {
@@ -38,8 +29,8 @@ body {
 }
 .navbar 
 {
-	 background-color:rgba(0,0,0,0.5) !important;
-  border-color:rgba(0,0,0,0.5) !important;
+	 background-color:rgba(0,0,0,0.7) !important;
+  border-color:rgba(0,0,0,0.7) !important;
 
 }
 .cover-caption
@@ -53,4 +44,20 @@ body {
 {
     text-align:center;
     padding-top:5vh;
+    
+}
+#enquiryform 
+{
+    margin-top: 15vh;
+}
+#enquiryform h5 
+{
+    text-align: center;
+    padding-bottom:3vh;
+}
+#enquiryform h2
+{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-align: center;
 }
