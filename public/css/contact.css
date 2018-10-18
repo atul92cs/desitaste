@@ -57,7 +57,20 @@ body {
 }
 #enquiryform h2
 {
-    padding-top: 5vh;
+    padding-top: 10vh;
     padding-bottom: 5vh;
     text-align: center;
+}
+#footer
+{
+    margin-top: 10vh;
+    text-align: center;
+    background: black;
+    color: white;
+    
+}
+#footer p
+{
+    padding-top: 7.5vh;
+    padding-bottom: 10vh;
 }

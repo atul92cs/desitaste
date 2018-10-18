@@ -49,4 +49,31 @@ body {
       width:100%;
 	/* background-color:rgba(0,0,0,0.5);*/
 }
+#main-body h1 
+{
+    text-align: center;
+    padding-bottom: 5vh;
+    font-family: 'Lora', serif;
+    
+}
 
+#main-body
+{
+    margin-top: 5vh;
+    
+}
+#main-body p
+{
+     font-family: 'Open Sans', sans-serif;
+}
+#footer
+{
+    margin-top: 5vh;
+    text-align: center;
+    background: black;
+    color: white;
+}
+#footer p
+{
+    padding-top: 5vh;
+}
